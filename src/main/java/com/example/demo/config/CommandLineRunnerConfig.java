@@ -33,24 +33,6 @@ public class CommandLineRunnerConfig {
 			});
 
 			log.info("");
-
-			// fetch an individual customer by ID
-			// Todo user = repository.findById("1");
-
-			// log.info("User found with findById(1L):");
-			// log.info("--------------------------------");
-			// log.info(user.toString());
-			// log.info("");
-
-			// fetch customers by first name
-			// log.info("Customer found with findByFirstName('Bauer'):");
-			// log.info("--------------------------------------------");
-
-			// repository.findByTitle("Bauer").forEach(bauer -> {
-			// 	log.info(bauer.toString());
-			// });
-
-			// log.info("");
 		};
 	}
 }
