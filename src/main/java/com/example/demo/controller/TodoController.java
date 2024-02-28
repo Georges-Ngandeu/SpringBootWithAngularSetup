@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Pageable;
 
 import org.modelmapper.ModelMapper;
 
@@ -38,10 +39,12 @@ public class TodoController {
     }
 
     @GetMapping
-    public List<TodoDto> getTodos() {
-        // Mapstruct is another dto mapper, but it's not straight forward
+    public List<TodoDto> getTodos(Pageable pageable) {
+        int toSkip = pageable.getPageSize() * pageable.getPageNumber();
+
         var todoList = StreamSupport
                 .stream(service.findAllTodos().spliterator(), false)
+                .skip(toSkip).limit(pageable.getPageSize())
                 .collect(Collectors.toList());
 
         return todoList
