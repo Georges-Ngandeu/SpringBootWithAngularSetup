@@ -22,7 +22,6 @@ import com.example.demo.dto.TodoDto;
 import com.example.demo.service.TodoService;
 
 import com.example.demo.entity.TodoEntity;
-
 @AllArgsConstructor
 @RestController
 @RequestMapping("api/v1/todos")
